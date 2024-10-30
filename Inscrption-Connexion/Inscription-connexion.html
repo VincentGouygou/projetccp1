@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription & Connexion</title>
+    <link rel="stylesheet" href="Inscription-connexion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="logo" data-aos="fade-down">
+        <img src="image/logo3.webp" alt="logo">
+    </div>
+
+    <div class="container">
+        <!-- Page de Bienvenue avec choix Connexion ou Inscription -->
+        <div id="welcome-page" class="page active" data-aos="fade-up">
+            <h1>Bienvenue</h1>
+            <button onclick="showPage('inscription-step1')">Inscription</button>
+            <button onclick="showPage('connexion')">Connexion</button>
+        </div>
+
+        <!-- Inscription Étape 1 -->
+        <div id="inscription-step1" class="page" data-aos="fade-up">
+            <h2>Inscription - Étape 1</h2>
+            <form id="form-step1">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="pseudo" placeholder="Pseudo" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <input type="password" name="confirm_password" placeholder="Confirmer le mot de passe" required>
+                <input type="date" name="birthdate" placeholder="Date de naissance" required>
+                <button type="button" onclick="showPage('inscription-step2')">Suivant</button>
+                <button type="button" class="back-button" onclick="goBack('welcome-page')">Retour</button>
+            </form>
+        </div>
+
+        <!-- Inscription Étape 2 -->
+        <div id="inscription-step2" class="page" data-aos="fade-up">
+            <h2>Inscription - Étape 2</h2>
+            <form id="form-step2">
+                <label for="avatar">Choisir un avatar ou une photo de profil :</label>
+                <input type="file" id="avatar" name="avatar" accept="image/*" required>
+
+                <label for="games">Sélectionner jusqu'à 3 jeux :</label>
+                <select id="games" name="games[]" multiple required>
+                    <option value="Fortnite">Fortnite</option>
+                    <option value="Minecraft">Minecraft</option>
+                    <option value="League of Legends">League of Legends</option>
+                    <option value="Call of Duty">Call of Duty</option>
+                    <option value="Apex Legends">Apex Legends</option>
+                </select>
+
+                <label for="platform">Sélectionner une plateforme :</label>
+                <select id="platform" name="platform" required>
+                    <option value="PC">PC</option>
+                    <option value="PlayStation">PlayStation</option>
+                    <option value="Xbox">Xbox</option>
+                    <option value="Switch">Nintendo Switch</option>
+                </select>
+
+                <button type="button" onclick="showPage('welcome-page')">Terminer l'inscription</button>
+                <button type="button" class="back-button" onclick="goBack('inscription-step1')">Retour</button>
+            </form>
+        </div>
+
+        <!-- Connexion -->
+        <div id="connexion" class="page" data-aos="fade-up">
+            <h2>Connexion</h2>
+            <form id="login-form">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <button type="submit">Connexion</button>
+                <button type="button" class="back-button" onclick="goBack('welcome-page')">Retour</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Carrousel avec fond stylisé -->
+    <div class="carousel-container" data-aos="zoom-in">
+        <div class="carousel">
+            <img src="image/logo1.webp" alt="Image 1" class="carousel-image active">
+            <img src="image/logo2.webp" alt="Image 2" class="carousel-image">
+            <img src="image/logo3.webp" alt="Image 3" class="carousel-image">
+        </div>
+    </div>
+
+    <footer class="footer" data-aos="fade-up">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h3><i class="fas fa-info-circle"></i> À propos</h3>
+                <ul>
+                    <li><a href="/qui-sommes-nous"><i class="fas fa-user-friends"></i> Qui sommes-nous ?</a></li>
+                    <li><a href="/notre-mission"><i class="fas fa-bullseye"></i> Notre mission : faciliter les connexions entre gamers</a></li>
+                </ul>
+            </div>
+          
+            <div class="footer-column">
+                <h3><i class="fas fa-envelope"></i> Assistance</h3>
+                <ul>
+                    <li><a href="/faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                    <li><a href="/support-client"><i class="fas fa-envelope"></i> Support client</a></li>
+                </ul>
+            </div>
+          
+            <div class="footer-column">
+                <h3><i class="fas fa-gavel"></i> Légal</h3>
+                <ul>
+                    <li><a href="/conditions-utilisation"><i class="fas fa-file-contract"></i> Conditions d’utilisation</a></li>
+                    <li><a href="/politique-confidentialite"><i class="fas fa-user-shield"></i> Politique de confidentialité</a></li>
+                    <li><a href="/mentions-legales"><i class="fas fa-gavel"></i> Mentions légales</a></li>
+                </ul>
+            </div>
+          
+            <div class="footer-column">
+                <h3>Suivez-nous :</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fas fa-xmark"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-discord"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <hr>
+        <p class="copyright">© PolyGameHub 2025 | Tous droits réservés</p>
+    </footer>
+
+    <script src="Inscription-connexion.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: "ease-in-out",
+            once: true
+        });
+    </script>
+</body>
+</html>
