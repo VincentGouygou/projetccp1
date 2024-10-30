@@ -1,0 +1,332 @@
+:root {
+  --light-grey: #ececec;
+  --dark-grey: #acacac;
+  --green: #4CAF50;
+  --red: #FF5252;
+  --black-transparent: rgba(0, 0, 0, 0.8);
+  --transition-time: .4s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--light-grey);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 42px;
+}
+
+main {
+  width: 300px;
+  max-width: 90%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.profiles {
+  width: 100%;
+  position: relative;
+  height: 450px;
+}
+
+.profile {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+  user-select: none; /* Non-prefixed version */
+}
+
+.profiles::before {
+  content: 'Plus rien à matcher...';
+  color: var(--dark-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.profile__image {
+  height: 0;
+  padding-bottom: 150%;
+  background-size: cover;
+  background-position: center center;
+}
+
+.profile__infos {
+  padding: 12px;
+  position: absolute;
+  bottom: 0px;
+  background: linear-gradient(0deg, black, transparent);
+  width: 100%;
+}
+
+.profile__name {
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.profile__age {
+  color: var(--light-grey);
+  font-weight: normal;
+}
+
+.profile__description {
+  color: white;
+  font-size: 13px;
+}
+
+.bottombar {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.bottombar__button {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  background: white; 
+  padding: 16px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: .4s;
+}
+
+.bottombar__button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.profile--match {
+  transition: var(--transition-time);
+  transform: translateX(1500px) translateY(600px) rotate(90deg);
+}
+
+.profile--next {
+  transition: var(--transition-time);
+  transform: translateX(-1500px) translateY(600px) rotate(-90deg);
+}
+
+.profile--back {
+  transition: var(--transition-time);
+}
+
+.profile--matching::after, .profile--nexting::after {
+  content: 'MATCH';
+  font-weight: bold;
+  font-size: 28px;
+  padding: 8px 12px;
+  border: solid 2px var(--green);
+  color: var(--green);
+  background: var(--black-transparent);
+  position: absolute;
+  top: 24px;
+  right: 12px;
+  border-radius: 4px;
+  transform: rotate(24deg);
+} 
+
+.profile--nexting::after {
+  content: 'NEXT';
+  border: solid 2px var(--red);
+  color: var(--red);
+}
+/* Style de base de la barre de navigation */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(0deg, #c400b4b3, #011d7ab6, #02cfeab6);
+  padding: 10px 20px;
+}
+
+/* Style du logo */
+#logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Style des liens de navigation */
+.center-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Bouton de déconnexion */
+#logout {
+  margin-left: 10px;
+}
+
+/* Icône de menu déroulant */
+#menu-icon {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+}
+
+/* Menu déroulant - affichage mobile */
+.center-icons.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(17, 25, 40, 0.95); /* Fond sombre avec transparence */
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s ease-in-out;
+  z-index: 10;
+}
+
+/* Boutons dans le menu déroulant */
+.center-icons .btn {
+  width: 90%;
+  text-align: center;
+  padding: 12px;
+  margin: 5px 0;
+  color: white;
+  font-size: 1.1em;
+  border-radius: 5px;
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.8), #3282b8);
+  transition: background 0.3s ease;
+}
+
+.center-icons .btn:hover {
+  background: linear-gradient(135deg, #3282b8, rgba(255, 105, 180, 0.8));
+}
+.btn a , #logout a {
+  background: linear-gradient(to bottom, rgba(255, 105, 180, 0.8), rgba(255, 192, 203, 0.8)); /* Dégradé rose transparent */
+  -webkit-background-clip: text; /* Appliquer le clip de fond au texte */
+  -webkit-text-fill-color: transparent; /* Rendre le remplissage du texte transparent */
+  font-weight: bold; /* Gras si nécessaire */
+}
+
+/* Animation de glissement */
+@keyframes slideDown {
+  0% {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Media Query pour les petits écrans */
+@media (max-width: 100%) {
+  /* Cacher les liens de navigation sur mobile */
+  .center-icons {
+      display: none;
+  }
+
+  /* Afficher le menu déroulant sur mobile */
+  #menu-icon {
+      display: block;
+  }
+
+  /* Position du logo */
+  #logo {
+      margin-right: auto;
+  }
+}
+
+/* Styles pour les écrans de bureau */
+@media (min-width: 769px
+      ) {
+  #dropdown-menu {
+      display: none; /* Assure que le menu n'apparait pas sur grand écran */
+  }
+}
+/* Footer */
+#footerid {
+  max-width: 105%;
+  color: white;
+ 
+}
+.container{
+  width: 105%;
+}
+a {  
+  color: white;
+  text-decoration: none;
+}
+.col-12{
+  text-align: center;}
+h3{
+  font-size: 22px;
+}
+a:hover{
+  color: black;
+} 
+/* Positionnement général */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Navbar fixée en haut */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+/* Positionnement central du swiper */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding-top: 80px; /* Pour éviter qu'il ne chevauche la navbar */
+  padding-bottom: 80px; /* Pour éviter qu'il ne chevauche le footer */
+}
+
+
+/* Footer fixé en bas */
+#footerid {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, #c400b4b3, #011d7ab6, #02cfeab6);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  z-index: 5;
+}

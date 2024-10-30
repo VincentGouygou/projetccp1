@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyGameHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="image/polygamelogopetit.png" alt="Logo du site">
+                </a>
+            </div>
+            <div class="center-icons" id="menu-links">
+                <div class="btn">
+                    <a class="nav-link" href="index.html" alt="Accueil">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </div>
+                <div class="btn">
+                    <a class="nav-link" href="fildactu.html" alt="Fil d'actualité">
+                        <i class="fas fa-newspaper"></i>
+                    </a>
+                </div>
+                <div class="btn">
+                    <a class="nav-link" href="messagerie.html" alt="Messagerie">
+                        <i class="fas fa-comments"></i>
+                    </a>
+                </div>
+                <div class="btn">
+                    <a class="nav-link" href="profil.html" alt="Profil">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+                <div id="logout">
+                    <a class="nav-link logout" href="deconnexion.html" alt="Déconnexion">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div id="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="profiles" id="profiles-container">
+            <!-- Contenu du swiper ici -->
+        </div>
+        <div class="bottombar">
+            <div class="bottombar__button">
+                <img src="image/icon-heart.png" alt="Like">
+            </div>
+            <div class="bottombar__button">
+                <img src="image/icon-next.png" alt="Dislike">
+            </div>
+            <div class="bottombar__button">
+                <img src="image/icon-messagerie.png" alt="Messagerie">
+            </div>
+        </div>
+    </main>
+
+    <footer id="footerid" class="container">
+        <div class="row" style="background: linear-gradient(0deg, #02cfeab6, #011d7ab6, #c400b4b3);">
+            <div class="col-3">
+                <h3><i class="fas fa-info-circle"></i> À propos</h3>
+                <p><a href="/qui-sommes-nous"><i class="fas fa-user-friends"></i> Qui sommes-nous ?</a></p>
+                <p><a href="/notre-mission"><i class="fas fa-bullseye"></i> Notre mission : faciliter les connexions entre gamers</a></p>
+            </div>
+            <div class="col-3">
+                <h3><i class="fas fa-envelope"></i> Assistance</h3>
+                <p><a href="/faq"><i class="fas fa-question-circle"></i> FAQ</a></p>
+                <p><a href="/support-client"><i class="fas fa-envelope"></i> Support client</a></p>
+            </div>
+            <div class="col-3">
+                <h3><i class="fas fa-gavel"></i> Légal</h3>
+                <a href="/conditions-utilisation"><i class="fas fa-file-contract"></i> Conditions d’utilisation</a>
+                <a href="/politique-confidentialite"><i class="fas fa-user-shield"></i> Politique de confidentialité</a>
+                <a href="/mentions-legales"><i class="fas fa-gavel"></i> Mentions légales</a>
+            </div>
+            <div class="col-3 social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fas fa-xmark"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+            <hr>
+            <div class="col-12">
+                <p class="copyright" style="text-align: center;">© PolyGameHub 2025 | Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

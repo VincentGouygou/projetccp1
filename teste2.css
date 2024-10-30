@@ -1,0 +1,105 @@
+#swipper{
+    height: 50%;
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid;
+    border-radius: 10px;
+    padding: 3px;
+    
+}
+#Pourcentageimg{
+    background-color: rgb(61, 61, 61);
+    margin: 2px;
+    display: flex;
+    justify-content: space-around;
+    border: solid;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+#Pourcentageimg img:hover{ 
+    background-color: red;
+}
+
+.pf{
+    background-color: green;
+    width: 50%;
+    height: 50%;
+    margin: 5px;
+    
+}
+.pf img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    
+
+}
+#pseudo{
+    word-spacing: 100px;
+    font-size: 60%;
+    text-align: center;
+   
+    
+    
+}
+
+
+#description{
+    margin: 2px;
+    background-color: red;
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+    
+
+}
+#LikeDislikeTCHAT{
+    display: flex;
+    justify-content: space-around;
+    background-color: beige;
+    border: solid;
+    border-radius: 10px;
+    padding: 10px;
+    
+    
+    
+}
+
+i{
+    padding-left: 50%;
+    
+}
+
+
+#like{
+    background-color: rgb(191, 128, 250);
+    border: solid;
+    border-radius: 10px;
+    padding: 10px;
+    height: 30% ;
+    width: 30% ;
+}
+#message{
+    background-color: blueviolet;
+    border: solid;
+    border-radius: 10px;
+    padding: 10px;
+    height: 30% ;
+    width: 30% ;
+}
+#skip{
+    background-color: rgb(43, 226, 67);
+    border: solid;
+    border-radius: 10px;
+    padding: 10px;
+    height: 30% ;
+    width: 30% ;
+}
+#LikeDislikeTCHAT div:hover{
+    background-color: red;
+    
+
+}

@@ -1,0 +1,142 @@
+/* Style de base de la barre de navigation */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(0deg, #c400b4b3, #011d7ab6, #02cfeab6);
+    padding: 10px 20px;
+}
+
+/* Style du logo */
+#logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+#logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Style des liens de navigation */
+.center-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Bouton de déconnexion */
+#logout {
+    margin-left: 10px;
+}
+
+/* Icône de menu déroulant */
+#menu-icon {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* Menu déroulant - affichage mobile */
+.center-icons.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(17, 25, 40, 0.95); /* Fond sombre avec transparence */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.3s ease-in-out;
+    z-index: 10;
+}
+
+/* Boutons dans le menu déroulant */
+.center-icons .btn {
+    width: 90%;
+    text-align: center;
+    padding: 12px;
+    margin: 5px 0;
+    color: white;
+    font-size: 1.1em;
+    border-radius: 5px;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.8), #3282b8);
+    transition: background 0.3s ease;
+}
+
+.center-icons .btn:hover {
+    background: linear-gradient(135deg, #3282b8, rgba(255, 105, 180, 0.8));
+}
+.btn a , #logout a {
+    background: linear-gradient(to bottom, rgba(255, 105, 180, 0.8), rgba(255, 192, 203, 0.8)); /* Dégradé rose transparent */
+    -webkit-background-clip: text; /* Appliquer le clip de fond au texte */
+    -webkit-text-fill-color: transparent; /* Rendre le remplissage du texte transparent */
+    font-weight: bold; /* Gras si nécessaire */
+}
+
+/* Animation de glissement */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Query pour les petits écrans */
+@media (max-width: 100%) {
+    /* Cacher les liens de navigation sur mobile */
+    .center-icons {
+        display: none;
+    }
+
+    /* Afficher le menu déroulant sur mobile */
+    #menu-icon {
+        display: block;
+    }
+
+    /* Position du logo */
+    #logo {
+        margin-right: auto;
+    }
+}
+
+/* Styles pour les écrans de bureau */
+@media (min-width: 769px
+        ) {
+    #dropdown-menu {
+        display: none; /* Assure que le menu n'apparait pas sur grand écran */
+    }
+}
+/* Footer */
+#footerid {
+    max-width: 105%;
+    color: white;
+   
+}
+.container{
+    width: 105%;
+}
+a {  
+    color: white;
+    text-decoration: none;
+}
+.col-12{
+    text-align: center;}
+h3{
+    font-size: 22px;
+}
+a:hover{
+    color: black;
+}
+main{background: radial-gradient();}
+
+ 
