@@ -245,15 +245,16 @@ img {
 }
 
 /* Media Query pour les petits écrans */
-@media (max-width: 100%) {
+@media (max-width: 768px) {
   /* Cacher les liens de navigation sur mobile */
   .center-icons {
       display: none;
   }
 
   /* Afficher le menu déroulant sur mobile */
+  /* Afficher l'icône hamburger */
   #menu-icon {
-      display: block;
+    display: block;
   }
 
   /* Position du logo */
@@ -263,8 +264,7 @@ img {
 }
 
 /* Styles pour les écrans de bureau */
-@media (min-width: 769px
-      ) {
+@media (min-width: 769px) {
   #dropdown-menu {
       display: none; /* Assure que le menu n'apparait pas sur grand écran */
   }
